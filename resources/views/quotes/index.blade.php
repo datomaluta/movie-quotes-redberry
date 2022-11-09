@@ -5,7 +5,6 @@
         </div>
         <h1 class="text-white text-5xl text-center leading-[3.35rem] mb-28">"{{$quote->text}}"</h1>
 
-        <a class="text-white text-5xl text-center underline leading-[3.35rem]" href="#">{{$quote->movie->name}}</a>
+        <a class="text-white text-5xl text-center underline leading-[3.35rem]" href="movies/{{$quote->movie_id}}">{{$quote->movie->name}}</a>
     </div>
-    
 </x-layout>
