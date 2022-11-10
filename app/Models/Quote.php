@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quote extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    public function movie(){
-        return $this->belongsTo(Movie::class);
-    }
+	public function movie()
+	{
+		return $this->belongsTo(Movie::class);
+	}
 }
