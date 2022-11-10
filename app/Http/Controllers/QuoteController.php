@@ -8,7 +8,7 @@ class QuoteController extends Controller
 {
 	public function index()
 	{
-		$quote = Quote::inRandomOrder()->limit(1)->first();
+		$quote = Quote::inRandomOrder()->first();
 		return view('quote.index', ['quote'=>$quote]);
 	}
 }
