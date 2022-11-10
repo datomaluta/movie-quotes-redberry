@@ -26,18 +26,22 @@ class DatabaseSeeder extends Seeder
 
 		Movie::create([
 			'name'=> 'Hot Dog',
+			'slug'=> 'hot-dog',
 		]);
 
 		Movie::create([
 			'name'=> 'Sherekilebi',
+			'slug'=> 'sherekilebi',
 		]);
 
 		Movie::create([
 			'name'=> 'An extraordinary exhibition',
+			'slug'=> 'an-extraordinary-exshibition',
 		]);
 
 		Movie::create([
 			'name'=> 'Blue mountains',
+			'slug'=> 'blue-mountains',
 		]);
 
 		Quote::create([
