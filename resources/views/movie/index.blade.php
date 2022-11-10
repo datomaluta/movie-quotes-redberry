@@ -7,4 +7,5 @@
         @endforeach
 
     </div>
+    <x-lang-buttons/>
 </x-layout>

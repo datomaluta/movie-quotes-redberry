@@ -6,5 +6,7 @@
         <h1 class="text-white text-5xl text-center leading-[3.35rem] mb-28">"{{$quote->text}}"</h1>
 
         <a class="text-white text-5xl text-center underline leading-[3.35rem]" href="movies/{{$quote->movie_id}}">{{$quote->movie->name}}</a>
+
+        <x-lang-buttons/>
     </div>
 </x-layout>
