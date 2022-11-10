@@ -6,8 +6,7 @@
         @vite('resources/css/app.css')
         <title>Movies and Quotes</title>
     </head>
-    <body class="bg-red-300">
-            {{-- <h1>{{$quote->text}}</h1> --}}
+    <body class="h-screen bg-gradient-radial from-neutral-600 to-neutral-700">
         {{$slot}}
     </body>
 </html>
