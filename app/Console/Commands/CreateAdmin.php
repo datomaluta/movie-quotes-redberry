@@ -28,10 +28,10 @@ class CreateAdmin extends Command
 	 */
 	public function handle()
 	{
-		$username = $this->ask('What is your username?');
-		$password = $this->ask('What is your password?');
+		$name = $this->ask('Please, Input your username?');
+		$password = $this->ask('Please, Input your password?');
 
-		$attributes = ['username'=>$username, 'password'=>$password];
+		$attributes = ['username'=>$name, 'password'=>bcrypt($password)];
 
 		User::create($attributes);
 

@@ -21,12 +21,19 @@ class SessionController extends Controller
 		if (!auth()->attempt($attributes))
 		{
 			throw ValidationException::withMessages([
-				'email'=> 'Your provided credentials not be verified.',
+				'username'=> 'Your provided credentials not be verified.',
 			]);
 		}
 
 		session()->regenerate();
 
-		return redirect('')->with('success', 'welcome');
+		return redirect('/')->with('success', 'welcome');
+	}
+
+	public function destroy()
+	{
+		auth()->logout();
+
+		return redirect('/')->with('success', 'Goodbye');
 	}
 }
