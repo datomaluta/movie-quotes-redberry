@@ -25,9 +25,9 @@
             </div>
         @endforeach
 
-        {{-- <div class="mt-10">
+        <div class="mt-10">
             {{ $quotes->links() }}
-        </div> --}}
+        </div>
 
     </div>
 </x-admin-layout>

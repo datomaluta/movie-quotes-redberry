@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [QuoteController::class, 'index']);
+Route::get('/quotes/{quote}', [QuoteController::class, 'show']);
+
 Route::get('/movies/{movie:slug}', [MovieController::class, 'index']);
 
 Route::get('/login', [SessionController::class, 'create']);
@@ -38,4 +40,7 @@ Route::delete('admin/movies/{movie}', [AdminMovieController::class, 'destroy']);
 
 Route::get('admin/quotes', [AdminQuoteController::class, 'index']);
 Route::get('admin/quotes/create', [AdminQuoteController::class, 'create']);
-Route::post('admin/quotes',[AdminQuoteController::class, 'store']);
+Route::post('admin/quotes', [AdminQuoteController::class, 'store']);
+
+Route::get('admin/quotes/{quote}/edit', [AdminQuoteController::class, 'edit']);
+Route::patch('admin/quotes/{quote}', [AdminQuoteController::class, 'update']);
