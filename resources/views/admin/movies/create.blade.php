@@ -3,7 +3,7 @@
         @csrf
         <div class="mb-4">
             <label class="block uppercase font-bold text-white mb-1" for="name">Movie Name</label>
-            <input class="border border-gray-200 p-2 w-full rounded" type="name" id="name" type="text" name="name"/>
+            <input value="{{old('name')}}" class="border border-gray-200 p-2 w-full rounded" type="name" id="name" type="text" name="name"/>
 
             
             @error('name')
@@ -13,7 +13,7 @@
 
         <div>
             <label class="block uppercase font-bold text-white mb-1" for="slug">Slug</label>
-            <input class="border border-gray-200 p-2 w-full rounded" type="text" id="slug" type="text" name="slug" />
+            <input value="{{old('name')}}" class="border border-gray-200 p-2 w-full rounded" type="text" id="slug" type="text" name="slug" />
             @error('slug')
                 <span class="text-xs text-red-500">{{ $message }}</span>
             @enderror

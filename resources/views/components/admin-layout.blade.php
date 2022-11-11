@@ -113,8 +113,9 @@
                 <main class="relative z-0 flex-1 overflow-y-auto focus:outline-none">
                     <!-- Start main area-->
                     <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
-                        <div class="h-full rounded-lg border-2 border-dashed border-gray-200 p-4">
+                        <div class="h-full rounded-lg border-2 border-dashed border-gray-200 p-4 ">
                             {{ $slot }}
+
                         </div>
                     </div>
                     <!-- End main area -->

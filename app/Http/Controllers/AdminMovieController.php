@@ -9,7 +9,7 @@ class AdminMovieController extends Controller
 {
 	public function index()
 	{
-		return view('admin.movies.index', ['movies'=>Movie::all()]);
+		return view('admin.movies.index', ['movies'=>Movie::simplePaginate(9)]);
 	}
 
 	public function create()
@@ -21,7 +21,7 @@ class AdminMovieController extends Controller
 	{
 		// dd(request()->all());
 		$attributes = request()->validate([
-			'name'=> ['required', Rule::unique('movies', 'name')],
+			'name'=> ['required', 'min:3', Rule::unique('movies', 'name')],
 			'slug'=> ['required', Rule::unique('movies', 'slug')],
 		]);
 
@@ -43,6 +43,13 @@ class AdminMovieController extends Controller
 		]);
 
 		$movie->update($attributes);
+
+		return redirect('/admin/movies');
+	}
+
+	public function destroy(Movie $movie)
+	{
+		$movie->delete();
 
 		return redirect('/admin/movies');
 	}
