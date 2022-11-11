@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SessionController;
@@ -22,3 +24,9 @@ Route::get('/movies/{movie:slug}', [MovieController::class, 'index']);
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+Route::get('/admin', [AdminController::class, 'index']);
+
+Route::get('admin/movies', [AdminMovieController::class, 'index']);
+Route::get('/admin/movies/create', [AdminMovieController::class, 'create']);
+Route::post('/admin/movies', [AdminMovieController::class, 'store']);
