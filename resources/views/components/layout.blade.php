@@ -8,7 +8,7 @@
     <title>Movies and Quotes</title>
 </head>
 
-<body class="h-screen bg-gradient-radial from-neutral-600 to-neutral-700 overflow-hidden">
+<body class="h-screen bg-gradient-radial from-neutral-600 to-neutral-700 ">
     {{ $slot }}
 
 

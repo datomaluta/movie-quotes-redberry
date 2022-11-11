@@ -30,3 +30,6 @@ Route::get('/admin', [AdminController::class, 'index']);
 Route::get('admin/movies', [AdminMovieController::class, 'index']);
 Route::get('/admin/movies/create', [AdminMovieController::class, 'create']);
 Route::post('/admin/movies', [AdminMovieController::class, 'store']);
+
+Route::get('admin/movies/{movie}', [AdminMovieController::class, 'edit']);
+Route::patch('admin/movies/{movie}', [AdminMovieController::class, 'update']);
