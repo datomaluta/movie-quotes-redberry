@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminMovieController;
+use App\Http\Controllers\AdminQuoteController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SessionController;
@@ -35,4 +36,5 @@ Route::get('admin/movies/{movie}/edit', [AdminMovieController::class, 'edit']);
 Route::patch('admin/movies/{movie}', [AdminMovieController::class, 'update']);
 Route::delete('admin/movies/{movie}', [AdminMovieController::class, 'destroy']);
 
-Route::get('admin/quotes', [AdminMovieController::class, 'index']);
+Route::get('admin/quotes', [AdminQuoteController::class, 'index']);
+Route::get('admin/quotes/create', [AdminQuoteController::class, 'create']);

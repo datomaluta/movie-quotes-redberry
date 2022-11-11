@@ -5,9 +5,10 @@
               Movie</a>
       </div>
 
-      <div class="mt-8 px-16 bg-red-500">
+      <div class="mt-8 px-16 ">
           @foreach ($movies as $movie)
               <div class="flex justify-between items-center  py-4 border-b border-white">
+
                   <a class="text-white text-3xl w-[1/2] hover:underline"
                       href="/movies/{{ $movie->slug }}">{{ $movie->name }}</a>
                   <div class="flex">
