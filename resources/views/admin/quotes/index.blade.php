@@ -9,7 +9,7 @@
         @foreach ($quotes as $quote)
             <div class="flex justify-between items-center py-4 border-b border-white">
                 <a class="text-white text-xl w-[1/2] hover:underline flex items-center" href="/quotes/{{ $quote->id }}">
-                    <img class="h-10 rounded mr-2" src="{{ asset('storage/thumbnails/' . $quote->thumbnail) }}"
+                    <img class="h-10 rounded mr-2" src="{{ asset('storage/' . $quote->thumbnail) }}"
                         alt="quotedisp">
                     <span>{{ $quote->text }}</span></a>
                 <div class="flex">

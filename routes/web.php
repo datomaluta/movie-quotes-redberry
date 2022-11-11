@@ -38,3 +38,4 @@ Route::delete('admin/movies/{movie}', [AdminMovieController::class, 'destroy']);
 
 Route::get('admin/quotes', [AdminQuoteController::class, 'index']);
 Route::get('admin/quotes/create', [AdminQuoteController::class, 'create']);
+Route::post('admin/quotes',[AdminQuoteController::class, 'store']);

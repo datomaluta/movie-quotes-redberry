@@ -1,9 +1,9 @@
 <x-admin-layout>
-    <form class="w-1/2 mx-auto mt-4" method="POST" action="/admin/quotes">
+    <form class="w-1/2 mx-auto mt-4" method="POST" action="/admin/quotes" enctype="multipart/form-data">
         @csrf
         <div class="mb-4">
             <label class="block uppercase font-bold text-white mb-1" for="name">Quote Text</label>
-            <input value="{{old('quote')}}" class="border border-gray-200 p-2 w-full rounded" type="text" id="quote"  name="quote"/>
+            <input value="{{old('quote')}}" class="border border-gray-200 p-2 w-full rounded" type="text" id="text"  name="text"/>
 
             
             @error('quote')
