@@ -15,7 +15,7 @@
                 <div class="flex">
                     <a class="text-white px-4 py-1 bg-green-500 rounded mr-2 hover:bg-green-700"
                         href="/admin/quotes/{{ $quote->id }}/edit">edit</a>
-                    <form action="/admin/movies/{{ $quote->id }}" method="POST">
+                    <form action="/admin/quotes/{{ $quote->id }}" method="POST">
                         @csrf
                         @method('DELETE')
 
