@@ -6,7 +6,7 @@
             <x-quote-row id="{{$quote->id}}" text="{{$quote->text}}" thumbnail="{{$quote->thumbnail}}"/>
         @endforeach
 
-        <div class="mt-10">
+        <div class="mt-4 flex justify-center">
             {{ $quotes->links() }}
         </div>
 

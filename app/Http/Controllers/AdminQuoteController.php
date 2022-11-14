@@ -9,7 +9,7 @@ class AdminQuoteController extends Controller
 {
 	public function index()
 	{
-		return view('admin.quotes.index', ['quotes'=>Quote::simplePaginate(8)]);
+		return view('admin.quotes.index', ['quotes'=>Quote::paginate(8)]);
 	}
 
 	public function create()
