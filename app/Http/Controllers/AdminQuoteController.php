@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreQuoteRequest;
 use App\Models\Quote;
-use Illuminate\Validation\Rule;
 
 class AdminQuoteController extends Controller
 {
@@ -17,15 +17,9 @@ class AdminQuoteController extends Controller
 		return view('admin.quotes.create');
 	}
 
-	public function store()
+	public function store(StoreQuoteRequest $request)
 	{
-		// $path = request()->file('thumbnail')->store('thumbnails');
-
-		$attributes = request()->validate([
-			'text'       => 'required',
-			'thumbnail'  => 'required|image',
-			'movie_id'   => ['required', Rule::exists('movies', 'id')],
-		]);
+		$attributes = $request->validated();
 
 		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
@@ -39,13 +33,9 @@ class AdminQuoteController extends Controller
 		return view('admin.quotes.edit', ['quote'=>$quote]);
 	}
 
-	public function update(Quote $quote)
+	public function update(Quote $quote, StoreQuoteRequest $request)
 	{
-		$attributes = request()->validate([
-			'text'       => 'required',
-			'thumbnail'  => 'image',
-			'movie_id'   => ['required', Rule::exists('movies', 'id')],
-		]);
+		$attributes = $request->validated();
 
 		if (isset($attributes['thumbnail']))
 		{
