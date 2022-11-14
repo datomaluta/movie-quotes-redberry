@@ -1,3 +1,6 @@
 <x-admin-layout>
-  {{-- <h1 class="text-center text-5xl font-bold text-white mt-48">Hello In Movies And Quotes Word</h1> --}}
+  <div class="h-full flex justify-center items-center flex-col gap-4">
+    <a class="bg-blue-500 px-4 py-2 font-bold rounded text-white text-4xl" href="/admin/movies">Create or Edit Movies</a>
+    <a class="bg-blue-500 px-4 py-2 font-bold rounded text-white text-4xl" href="/admin/quotes">Create or Edit Quotes</a>
+  </div>
 </x-admin-layout>

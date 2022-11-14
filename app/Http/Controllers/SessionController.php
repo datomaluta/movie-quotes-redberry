@@ -29,7 +29,7 @@ class SessionController extends Controller
 
 		session()->regenerate();
 
-		return redirect('/')->with('success', 'welcome');
+		return redirect('/admin')->with('success', 'welcome');
 	}
 
 	public function destroy()

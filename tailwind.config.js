@@ -9,6 +9,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      fontFamily:{
+        'sansation-reg':['SansationRegular','sans-serif'],
+        'sansation-bold':['SansationBold','sans-serif']
       }
     },
   },
