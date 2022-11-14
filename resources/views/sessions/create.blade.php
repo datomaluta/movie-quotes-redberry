@@ -8,7 +8,7 @@
                 <input type="hidden" name="remember" value="true">
                 <div class="-space-y-px rounded-md shadow-sm">
                     <x-form.input name="username"/>
-                    <x-form.input name="password"/>
+                    <x-form.input name="password" type="password"/>
                 </div>
 
                 <div>

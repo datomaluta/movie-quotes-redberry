@@ -1,5 +1,5 @@
   <x-admin-layout>
-      <x-setting name="Movies" />
+      <x-setting name="movies" />
 
       <div class="mt-8 px-16">
           @foreach ($movies as $movie)

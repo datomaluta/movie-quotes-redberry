@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
@@ -11,12 +12,13 @@ class SessionController extends Controller
 		return view('sessions.create');
 	}
 
-	public function store()
+	public function store(StoreUserRequest $request)
 	{
-		$attributes = request()->validate([
-			'username'   => 'required|min:3',
-			'password'   => 'required',
-		]);
+		// $attributes = request()->validate([
+		// 	'username'   => 'required|min:3',
+		// 	'password'   => 'required',
+		// ]);
+		$attributes = $request->validated();
 
 		if (!auth()->attempt($attributes))
 		{

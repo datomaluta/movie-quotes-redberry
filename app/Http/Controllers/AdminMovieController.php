@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMovieRequest;
+use App\Http\Requests\UpdateMovieRequest;
 use App\Models\Movie;
 use Illuminate\Validation\Rule;
 
@@ -17,13 +19,15 @@ class AdminMovieController extends Controller
 		return view('admin.movies.create');
 	}
 
-	public function store()
+	public function store(StoreMovieRequest $request)
 	{
 		// dd(request()->all());
-		$attributes = request()->validate([
-			'name'=> ['required', 'min:3', Rule::unique('movies', 'name')],
-			'slug'=> ['required', Rule::unique('movies', 'slug')],
-		]);
+		// $attributes = request()->validate([
+		// 	'name'=> ['required', 'min:3', Rule::unique('movies', 'name')],
+		// 	'slug'=> ['required', Rule::unique('movies', 'slug')],
+		// ]);
+
+		$attributes = $request->validated();
 
 		Movie::create($attributes);
 
@@ -35,12 +39,14 @@ class AdminMovieController extends Controller
 		return view('admin.movies.edit', ['movie'=>$movie]);
 	}
 
-	public function update(Movie $movie)
+	public function update(Movie $movie, UpdateMovieRequest $request)
 	{
-		$attributes = request()->validate([
-			'name'=> ['required', Rule::unique('movies', 'name')->ignore($movie->id)],
-			'slug'=> ['required', Rule::unique('movies', 'slug')->ignore($movie->id)],
-		]);
+		// $attributes = request()->validate([
+		// 	'name'=> ['required', Rule::unique('movies', 'name')->ignore($movie->id)],
+		// 	'slug'=> ['required', Rule::unique('movies', 'slug')->ignore($movie->id)],
+		// ]);
+
+		$attributes = $request->validated();
 
 		$movie->update($attributes);
 
