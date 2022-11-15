@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <form class="w-1/2 mx-auto mt-4" method="POST" action="/admin/movies">
+    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.movies.post')}}">
         @csrf
         <x-form.input name="name"/>
         <x-form.input name="slug"/>

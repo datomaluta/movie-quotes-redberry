@@ -7,17 +7,8 @@ use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
-	public function create()
-	{
-		return view('sessions.create');
-	}
-
 	public function store(StoreUserRequest $request)
 	{
-		// $attributes = request()->validate([
-		// 	'username'   => 'required|min:3',
-		// 	'password'   => 'required',
-		// ]);
 		$attributes = $request->validated();
 
 		if (!auth()->attempt($attributes))
@@ -29,13 +20,13 @@ class SessionController extends Controller
 
 		session()->regenerate();
 
-		return redirect('/admin')->with('success', 'welcome');
+		return redirect(route('admin.index'));
 	}
 
 	public function destroy()
 	{
 		auth()->logout();
 
-		return redirect('/')->with('success', 'Goodbye');
+		return redirect(route('index'));
 	}
 }

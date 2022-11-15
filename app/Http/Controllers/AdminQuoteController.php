@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreQuoteRequest;
+use App\Models\Movie;
 use App\Models\Quote;
 
 class AdminQuoteController extends Controller
@@ -14,7 +15,7 @@ class AdminQuoteController extends Controller
 
 	public function create()
 	{
-		return view('admin.quotes.create');
+		return view('admin.quotes.create', ['movies'=>Movie::all()]);
 	}
 
 	public function store(StoreQuoteRequest $request)
@@ -25,12 +26,12 @@ class AdminQuoteController extends Controller
 
 		Quote::create($attributes);
 
-		return redirect('/admin/quotes');
+		return redirect(route('admin.quotes.index'));
 	}
 
 	public function edit(Quote $quote)
 	{
-		return view('admin.quotes.edit', ['quote'=>$quote]);
+		return view('admin.quotes.edit', ['quote'=>$quote, 'movies'=>Movie::all()]);
 	}
 
 	public function update(Quote $quote, StoreQuoteRequest $request)
@@ -44,13 +45,13 @@ class AdminQuoteController extends Controller
 
 		$quote->update($attributes);
 
-		return redirect('/admin/quotes');
+		return redirect(route('admin.quotes.index'));
 	}
 
 	public function destroy(Quote $quote)
 	{
 		$quote->delete();
 
-		return redirect('/admin/quotes');
+		return redirect(route('admin.quotes.index'));
 	}
 }

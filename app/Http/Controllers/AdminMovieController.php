@@ -13,10 +13,6 @@ class AdminMovieController extends Controller
 		return view('admin.movies.index', ['movies'=>Movie::paginate(9)]);
 	}
 
-	public function create()
-	{
-		return view('admin.movies.create');
-	}
 
 	public function store(StoreMovieRequest $request)
 	{
@@ -24,7 +20,7 @@ class AdminMovieController extends Controller
 
 		Movie::create($attributes);
 
-		return redirect('/admin/movies');
+		return redirect(route('admin.movies.index'));
 	}
 
 	public function edit(Movie $movie)
@@ -38,13 +34,13 @@ class AdminMovieController extends Controller
 
 		$movie->update($attributes);
 
-		return redirect('/admin/movies');
+		return redirect(route('admin.movies.index'));
 	}
 
 	public function destroy(Movie $movie)
 	{
 		$movie->delete();
 
-		return redirect('/admin/movies');
+		return redirect(route('admin.movies.index'));
 	}
 }

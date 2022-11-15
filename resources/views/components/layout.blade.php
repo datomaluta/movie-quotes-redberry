@@ -13,13 +13,13 @@
 
 
     @auth
-        <form id="logout-form" method="POST" action="/logout" class="bg-white text-black p-2 fixed top-5 right-5 rounded"
+        <form id="logout-form" method="POST" action="{{route('logout')}}" class="bg-white text-black p-2 fixed top-5 right-5 rounded"
             class="hidden">
             @csrf
             <button type="submit">Log Out</button>
         </form>
     @else
-        <a class="bg-white text-black p-2 fixed top-5 right-5 rounded" href="/login">Log In</a>
+        <a class="bg-white text-black p-2 fixed top-5 right-5 rounded" href="{{route('login')}}">Log In</a>
     @endauth
 
 </body>

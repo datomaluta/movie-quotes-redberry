@@ -5,8 +5,8 @@
         {{ $name }}</a>
     <div class="flex">
         <a class="text-white px-4 py-1 bg-green-500 rounded mr-1 hover:bg-green-700"
-            href="/admin/movies/{{ $id }}/edit">edit</a>
-        <form action="/admin/movies/{{ $id }}" method="POST">
+            href="{{route('admin.movies.edit',$id)}}">edit</a>
+        <form action="{{route('admin.movies.delete',$id)}}" method="POST">
             @csrf
             @method('DELETE')
 

@@ -3,7 +3,7 @@
         <div class="w-full max-w-md space-y-8">
             <h1 class="text-center text-4xl text-white">Sign In!</h1>
 
-            <form class="mt-8 space-y-6" action="/login" method="POST">
+            <form class="mt-8 space-y-6" action="{{route('login.post')}}" method="POST">
                 @csrf
                 <input type="hidden" name="remember" value="true">
                 <div class="-space-y-px rounded-md shadow-sm">

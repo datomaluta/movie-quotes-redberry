@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <form class="w-1/2 mx-auto mt-4" method="POST" action="/admin/quotes/{{ $quote->id }}"
+    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.update',$quote->id)}}"
         enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -12,10 +12,6 @@
         <x-form.field>
             <x-form.label name='slug' />
             <select class="rounded" name="movie_id" id="movie_id" required>
-                @php
-                    $movies = \App\Models\Movie::all();
-                @endphp
-
                 @foreach ($movies as $movie)
                     <option {{ $quote->movie_id == $movie->id ? 'selected' : '' }} value={{ $movie->id }}>
                         {{ $movie->name }}</option>

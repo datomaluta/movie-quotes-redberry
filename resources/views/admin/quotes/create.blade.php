@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <form class="w-1/2 mx-auto mt-4" method="POST" action="/admin/quotes" enctype="multipart/form-data">
+    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.store')}}" enctype="multipart/form-data">
         @csrf
         <x-form.input name='text' />
         <x-form.input type="file" name='thumbnail' />
@@ -7,9 +7,6 @@
         <x-form.field>
             <x-form.label name='movie' for='movie'/>
             <select class="rounded" name="movie_id" id="movie_id" required>
-                @php
-                    $movies = \App\Models\Movie::all();
-                @endphp
 
                 @foreach ($movies as $movie)
                     <option {{ old('movie_id') == $movie->id ? 'selected' : '' }} value={{ $movie->id }}>
