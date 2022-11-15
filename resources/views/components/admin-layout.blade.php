@@ -23,7 +23,7 @@
                         <nav class="mt-5 flex-1" aria-label="Sidebar">
                             <div class="space-y-1 px-2">
 
-                                <a href="/admin"
+                                <a href="{{route('admin.index')}}"
                                     class="{{ request()->is('admin') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
 
                                     <x-svgs.home/>
@@ -52,17 +52,6 @@
                     <div>
                         <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                             alt="Your Company">
-                    </div>
-                    <div>
-                        <button type="button"
-                            class="-mr-3 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900">
-                            <span class="sr-only">Open sidebar</span>
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                        </button>
                     </div>
                 </div>
             </div>

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\LoginUserRequest;
 use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
-	public function store(StoreUserRequest $request)
+	public function login(LoginUserRequest $request)
 	{
 		$attributes = $request->validated();
 
@@ -23,7 +23,7 @@ class SessionController extends Controller
 		return redirect(route('admin.index'));
 	}
 
-	public function destroy()
+	public function logout()
 	{
 		auth()->logout();
 

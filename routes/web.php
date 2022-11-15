@@ -23,15 +23,15 @@ Route::get('/quotes/{quote}', [QuoteController::class, 'show'])->name('quote');
 Route::get('/movies/{movie:slug}', [MovieController::class, 'index'])->name('movie');
 
 Route::view('/login', 'sessions.create')->name('login')->middleware('guest');
-Route::post('/login', [SessionController::class, 'store'])->name('login.post');
-Route::post('/logout', [SessionController::class, 'destroy'])->name('logout')->middleware('auth');
+Route::post('/login', [SessionController::class, 'login'])->name('login.post');
+Route::post('/logout', [SessionController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::prefix('/admin')->middleware('auth')->group(function () {
 	Route::view('/', 'admin.dashboard.index')->name('admin.index');
 
 	Route::get('/movies', [AdminMovieController::class, 'index'])->name('admin.movies.index');
 	Route::view('/movies/create', 'admin.movies.create')->name('admin.movies.create');
-	Route::post('/movies', [AdminMovieController::class, 'store'])->name('admin.movies.post');
+	Route::post('/movies', [AdminMovieController::class, 'store'])->name('admin.movies.store');
 
 	Route::get('/movies/edit/{movie}', [AdminMovieController::class, 'edit'])->name('admin.movies.edit');
 	Route::patch('/movies/{movie}', [AdminMovieController::class, 'update'])->name('admin.movies.update');
