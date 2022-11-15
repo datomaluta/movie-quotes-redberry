@@ -18,11 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [QuoteController::class, 'index'])->name('index');
-Route::get('/quotes/{quote}', [QuoteController::class, 'show'])->name('quote');
-Route::get('/movies/{movie:slug}', [MovieController::class, 'index'])->name('movie');
+Route::group(['prefix'=>'{language}'], function () {
+	Route::get('/', [QuoteController::class, 'index'])->name('index');
+	Route::get('/quotes/{quote}', [QuoteController::class, 'show'])->name('quote');
+	Route::get('/movies/{movie:slug}', [MovieController::class, 'index'])->name('movie');
 
-Route::view('/login', 'sessions.create')->name('login')->middleware('guest');
+	Route::view('/login', 'sessions.create')->name('login')->middleware('guest');
+});
+
 Route::post('/login', [SessionController::class, 'login'])->name('login.post');
 Route::post('/logout', [SessionController::class, 'logout'])->name('logout')->middleware('auth');
 

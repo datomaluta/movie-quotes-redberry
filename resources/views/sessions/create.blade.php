@@ -1,7 +1,7 @@
 <x-layout>
     <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-md space-y-8">
-            <h1 class="text-center text-4xl text-white">Sign In!</h1>
+            <h1 class="text-center text-4xl text-white">{{__('login.signin')}}!</h1>
 
             <form class="mt-8 space-y-6" action="{{route('login.post')}}" method="POST">
                 @csrf
@@ -18,7 +18,7 @@
                             <!-- Heroicon name: mini/lock-closed -->
                             <x-svgs.login/>
                         </span>
-                        Sign in
+                        {{__('login.signin')}}
                     </button>
                 </div>
             </form>

@@ -1,4 +1,6 @@
 <div class="fixed top-[50%] left-14 translate-y-[-50%] flex flex-col">
-    <button class="text-black w-12 h-12 bg-white rounded-full mb-4">en</button>
-    <button class="text-white w-12 h-12 bg-transparent border-2 border-white rounded-full">ka</button>
-</div>
+    <a href="{{ route(Route::currentRouteName(), 'en') }}"
+        class="mb-4 rounded-full flex items-center justify-center w-12 h-12 {{ request()->language == 'en' ? 'text-black bg-white' : 'text-white bg-transparent border-2 border-white' }}">en</a>
+    <a href="{{ route(Route::currentRouteName(), 'ka') }}"
+        class="mb-4 rounded-full flex items-center justify-center w-12 h-12 {{ request()->language == 'ka' ? 'text-black bg-white' : 'text-white bg-transparent border-2 border-white' }}">ka</a>
+</div>u

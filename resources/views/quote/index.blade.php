@@ -6,9 +6,9 @@
         </div>
         <h1 class="text-white text-5xl text-center leading-[3.35rem] mb-28">"{{$quote->text}}"</h1>
 
-        <a class="text-white text-5xl text-center underline leading-[3.35rem]" href="{{route('movie',$quote->movie->slug)}}">{{$quote->movie->name}}</a>
+        <a class="text-white text-5xl text-center underline leading-[3.35rem]" href="{{route('movie',['movie'=>$quote->movie->slug,'language'=>app()->getLocale()])}}">{{$quote->movie->name}}</a>
 
-        <x-lang-buttons/>
+        {{-- <x-lang-buttons/> --}}
 
     </div>
 </x-layout>
