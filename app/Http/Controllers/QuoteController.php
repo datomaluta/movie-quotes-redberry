@@ -11,4 +11,9 @@ class QuoteController extends Controller
 		$quote = Quote::inRandomOrder()->first();
 		return view('quote.index', ['quote'=>$quote]);
 	}
+
+	public function show(Quote $quote)
+	{
+		return view('quote.index', ['quote'=>$quote]);
+	}
 }
