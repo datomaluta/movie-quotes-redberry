@@ -23,7 +23,7 @@
         {{-- <a class="bg-white text-black p-2 fixed top-5 right-5 rounded" href="{{route('login',app()->getLocale())}}">Log In</a> --}}
     @endauth
 
-    <x-lang-buttons/>
+    {{-- <x-lang-buttons/> --}}
 
 </body>
 
