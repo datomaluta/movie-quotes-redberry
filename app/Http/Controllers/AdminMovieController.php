@@ -17,7 +17,13 @@ class AdminMovieController extends Controller
 	{
 		$attributes = $request->validated();
 
-		Movie::create($attributes);
+		Movie::create([
+			'name' => [
+				'en' => $attributes['name'],
+				'ka' => $attributes['nameinka'],
+			],
+			'slug'=> $attributes['slug'],
+		]);
 
 		return redirect(route('admin.movies.index', app()->getLocale()));
 	}

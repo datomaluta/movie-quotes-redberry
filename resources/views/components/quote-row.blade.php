@@ -6,12 +6,12 @@
         <span>{{ $text }}</span></a>
     <div class="flex">
         <a class="text-white px-4 py-1 bg-green-500 rounded mr-2 hover:bg-green-700"
-            href="{{route('admin.quotes.edit',['language'=>app()->getLocale(), 'quote'=>$id])}}">edit</a>
+            href="{{route('admin.quotes.edit',['language'=>app()->getLocale(), 'quote'=>$id])}}">{{__('Edit')}}</a>
         <form action="{{route('admin.quotes.delete',['language'=>app()->getLocale(), 'quote'=>$id])}}" method="POST">
             @csrf
             @method('DELETE')
 
-            <button class="text-white px-4 py-1 bg-red-400 rounded hover:bg-red-600">Delete</button>
+            <button class="text-white px-4 py-1 bg-red-400 rounded hover:bg-red-600">{{__('Delete')}}</button>
         </form>
     </div>
 </div>

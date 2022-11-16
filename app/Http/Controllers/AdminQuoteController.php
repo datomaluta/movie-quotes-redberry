@@ -21,10 +21,17 @@ class AdminQuoteController extends Controller
 	public function store(StoreQuoteRequest $request)
 	{
 		$attributes = $request->validated();
-
 		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
-		Quote::create($attributes);
+
+		Quote::create([
+			'text' => [
+				'en' => $attributes['text'],
+				'ka' => $attributes['textinka'],
+			],
+			'thumbnail'=> $attributes['thumbnail'],
+			'movie_id' => $attributes['movie_id'],
+		]);
 
 		return redirect(route('admin.quotes.index', app()->getLocale()));
 	}

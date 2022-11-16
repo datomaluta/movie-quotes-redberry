@@ -11,6 +11,7 @@ class StoreQuoteRequest extends FormRequest
 	{
 		$rules = [
 			'text'       => 'required',
+			'textinka'=>'required',
 			'thumbnail'  => 'image',
 			'movie_id'   => ['required', Rule::exists('movies', 'id')],
 		];
