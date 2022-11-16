@@ -1,5 +1,8 @@
 {
     "username":"იუზერნეიმი",
     "password":"პაროლი",
-    "Sign in":"შესვლა"
+    "Sign in":"შესვლა",
+    "Dashboard": "ადმინ პანელი",
+	"Movies"   : "ფილმები",
+	"Quotes"   : "ციტატები"
 }
