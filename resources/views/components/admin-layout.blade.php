@@ -23,23 +23,25 @@
                         <nav class="mt-5 flex-1" aria-label="Sidebar">
                             <div class="space-y-1 px-2">
 
-                                <a href="{{route('admin.index')}}"
+                                <a href="{{route('admin.index',app()->getLocale())}}"
                                     class="{{ request()->is('admin') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
 
                                     <x-svgs.home/>
-                                    Dashboard
+                                    {{__('Dashboard')}}
                                 </a>
 
-                                <a href="{{route('admin.movies.index')}}"
+                                <a href="{{route('admin.movies.index',app()->getLocale())}}"
                                     class="{{ request()->is('admin/movies') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                    Movies
+                                    {{__('Movies')}}
                                 </a>
 
-                                <a href="{{route('admin.quotes.index')}}"
+                                <a href="{{route('admin.quotes.index',app()->getLocale())}}"
                                     class="{{ request()->is('admin/quotes') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                    Quotes
+                                    {{__('Quotes')}}
                                 </a>
 
+                                <a href="{{ route(Route::currentRouteName(), 'en') }}">en</a>
+                                <a href="{{ route(Route::currentRouteName(), 'ka') }}">ka</a>
                             </div>
                         </nav>
                     </div>
