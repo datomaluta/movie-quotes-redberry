@@ -40,8 +40,12 @@
                                     {{__('Quotes')}}
                                 </a>
 
-                                <a href="{{ route(Route::currentRouteName(), 'en') }}">en</a>
-                                <a href="{{ route(Route::currentRouteName(), 'ka') }}">ka</a>
+                                {{-- <a href="{{ route(Route::currentRouteName(), 'en') }}">en</a>
+                                <a href="{{ route(Route::currentRouteName(), 'ka') }}">ka</a> --}}
+                                
+                                {{-- <a href="{{ route(Route::currentRouteName(), ['language' => 'en','movie'=>request('movie')->id]) }}">en</a>
+                                
+                                <a href="{{ route(Route::currentRouteName(), ['language' => 'ka','movie'=>request('movie')->id]) }}">ka</a> --}}
                             </div>
                         </nav>
                     </div>

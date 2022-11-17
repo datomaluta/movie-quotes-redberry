@@ -1,7 +1,8 @@
 <x-admin-layout>
-    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.store')}}" enctype="multipart/form-data">
+    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.store',app()->getLocale())}}" enctype="multipart/form-data">
         @csrf
         <x-form.input name='text' />
+        <x-form.input name='textinka' />
         <x-form.input type="file" name='thumbnail' />
 
         <x-form.field>
@@ -16,6 +17,6 @@
             </select>
         </x-form.field>
 
-        <x-form.button>Add Quote</x-form.button>
+        <x-form.button>{{__('Add')}}</x-form.button>
     </form>
 </x-admin-layout>

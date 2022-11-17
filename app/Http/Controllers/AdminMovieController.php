@@ -13,34 +13,39 @@ class AdminMovieController extends Controller
 		return view('admin.movies.index', ['movies'=>Movie::paginate(9)]);
 	}
 
-
 	public function store(StoreMovieRequest $request)
 	{
 		$attributes = $request->validated();
 
-		Movie::create($attributes);
+		Movie::create([
+			'name' => [
+				'en' => $attributes['name'],
+				'ka' => $attributes['nameinka'],
+			],
+			'slug'=> $attributes['slug'],
+		]);
 
-		return redirect(route('admin.movies.index'));
+		return redirect(route('admin.movies.index', app()->getLocale()));
 	}
 
-	public function edit(Movie $movie)
+	public function edit($language, Movie $movie)
 	{
 		return view('admin.movies.edit', ['movie'=>$movie]);
 	}
 
-	public function update(Movie $movie, UpdateMovieRequest $request)
+	public function update($language, Movie $movie, UpdateMovieRequest $request)
 	{
 		$attributes = $request->validated();
 
 		$movie->update($attributes);
 
-		return redirect(route('admin.movies.index'));
+		return redirect(route('admin.movies.index', app()->getLocale()));
 	}
 
-	public function destroy(Movie $movie)
+	public function destroy($language, Movie $movie)
 	{
 		$movie->delete();
 
-		return redirect(route('admin.movies.index'));
+		return redirect(route('admin.movies.index', app()->getLocale()));
 	}
 }
