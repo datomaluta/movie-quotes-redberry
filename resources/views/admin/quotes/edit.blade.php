@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.update',['language'=>app()->getLocale(),'quote'=>$quote->id])}}"
+    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.update',['quote'=>$quote->id])}}"
         enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -21,6 +21,6 @@
         </x-form.field>
 
 
-        <x-form.button>{{__('Save')}}</x-form.button>
+        <x-form.button>{{__('admin.save')}}</x-form.button>
     </form>
 </x-admin-layout>

@@ -25,27 +25,34 @@ class AdminMovieController extends Controller
 			'slug'=> $attributes['slug'],
 		]);
 
-		return redirect(route('admin.movies.index', app()->getLocale()));
+		return redirect(route('admin.movies.index'));
 	}
 
-	public function edit($language, Movie $movie)
+	public function edit(Movie $movie)
 	{
 		return view('admin.movies.edit', ['movie'=>$movie]);
 	}
 
-	public function update($language, Movie $movie, UpdateMovieRequest $request)
+	public function update(Movie $movie, UpdateMovieRequest $request)
 	{
 		$attributes = $request->validated();
 
-		$movie->update($attributes);
 
-		return redirect(route('admin.movies.index', app()->getLocale()));
+		$movie->update([
+			'name' => [
+				'en' => $attributes['name'],
+				'ka' => $attributes['nameinka'],
+			],
+			'slug'=> $attributes['slug'],
+		]);
+
+		return redirect(route('admin.movies.index'));
 	}
 
-	public function destroy($language, Movie $movie)
+	public function destroy(Movie $movie)
 	{
 		$movie->delete();
 
-		return redirect(route('admin.movies.index', app()->getLocale()));
+		return redirect(route('admin.movies.index'));
 	}
 }

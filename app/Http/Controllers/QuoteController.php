@@ -12,7 +12,7 @@ class QuoteController extends Controller
 		return view('quote.index', ['quote'=>$quote]);
 	}
 
-	public function show($language, Quote $quote)
+	public function show(Quote $quote)
 	{
 		return view('quote.index', ['quote'=>$quote]);
 	}
