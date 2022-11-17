@@ -8,12 +8,12 @@
 
         <a class="text-white text-5xl text-center underline leading-[3.35rem]" href="{{route('movie',['language'=>app()->getLocale(),'movie'=>$quote->movie->slug])}}">{{$quote->movie->name}}</a>
 
-        <div class="fixed top-[50%] left-14 translate-y-[-50%] flex flex-col">
+        {{-- <div class="fixed top-[50%] left-14 translate-y-[-50%] flex flex-col">
             <a href="{{ route(Route::currentRouteName(), 'en') }}"
                 class="mb-4 rounded-full flex items-center justify-center w-12 h-12 {{ request()->language == 'en' ? 'text-black bg-white' : 'text-white bg-transparent border-2 border-white' }}">en</a>
             <a href="{{ route(Route::currentRouteName(), 'ka') }}"
                 class="mb-4 rounded-full flex items-center justify-center w-12 h-12 {{ request()->language == 'ka' ? 'text-black bg-white' : 'text-white bg-transparent border-2 border-white' }}">ka</a>
-        </div>
+        </div> --}}
 
     </div>
 </x-layout>

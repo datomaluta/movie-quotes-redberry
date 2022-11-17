@@ -20,13 +20,13 @@ class SessionController extends Controller
 
 		session()->regenerate();
 
-		return redirect(route('admin.index', app()->getLocale()));
+		return redirect(route('admin.index'));
 	}
 
 	public function logout()
 	{
 		auth()->logout();
 
-		return redirect(route('index', app()->getLocale()));
+		return redirect(route('index'));
 	}
 }

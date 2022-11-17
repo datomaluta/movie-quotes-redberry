@@ -1,6 +1,6 @@
 <x-admin-layout>
     <form class="w-1/2 mx-auto mt-4" method="POST"
-        action="{{ route('admin.movies.update', ['language' => app()->getLocale(), 'movie' => $movie->id]) }}">
+        action="{{ route('admin.movies.update',['movie' => $movie->id]) }}">
         @csrf
         @method('PATCH')
         <x-form.input name='name' :value="old('name', $movie->getTranslations('name')['en'])" />

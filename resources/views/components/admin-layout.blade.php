@@ -23,19 +23,19 @@
                         <nav class="mt-5 flex-1" aria-label="Sidebar">
                             <div class="space-y-1 px-2">
 
-                                <a href="{{route('admin.index',app()->getLocale())}}"
+                                <a href="{{route('admin.index')}}"
                                     class="{{ request()->is('admin') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
 
                                     <x-svgs.home/>
                                     {{__('Dashboard')}}
                                 </a>
 
-                                <a href="{{route('admin.movies.index',app()->getLocale())}}"
+                                <a href="{{route('admin.movies.index')}}"
                                     class="{{ request()->is('admin/movies') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     {{__('Movies')}}
                                 </a>
 
-                                <a href="{{route('admin.quotes.index',app()->getLocale())}}"
+                                <a href="{{route('admin.quotes.index')}}"
                                     class="{{ request()->is('admin/quotes') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     {{__('Quotes')}}
                                 </a>

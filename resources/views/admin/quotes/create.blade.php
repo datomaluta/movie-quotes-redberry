@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.store',app()->getLocale())}}" enctype="multipart/form-data">
+    <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.store')}}" enctype="multipart/form-data">
         @csrf
         <x-form.input name='text' />
         <x-form.input name='textinka' />
