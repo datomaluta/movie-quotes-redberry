@@ -11,6 +11,7 @@ Movie Quotes is platform where you can see random movie’s quotes. This platfor
 * [Tech Stack](#tech-stack)
 * [Getting Started](#getting-started)
 * [Migrations](#migration)
+* [Development](#development)
 
 #
 ### Prerequisites
@@ -31,7 +32,7 @@ Movie Quotes is platform where you can see random movie’s quotes. This platfor
 ### Getting Started
 1\. First of all you need to clone E Space repository from github:
 ```sh
-git clone https://github.com/e-space1/espace-back.git
+git clone https://github.com/RedberryInternship/datomaluta-movie-quotes.git
 ```
 
 2\. Next step requires you to run *composer install* in order to install all the dependencies.
@@ -63,6 +64,12 @@ And now you should provide **.env** file all the necessary environment variables
 
 >DB_PORT=3306
 
+>DB_DATABASE=*****
+
+>DB_USERNAME=*****
+
+>DB_PASSWORD=*****
+
 
 in order to cache environment variables.
 
@@ -83,3 +90,20 @@ php artisan migrate
 ```
 
 [Database Design Diagram](./readme/assets/drawsql.png )
+
+#
+### Development
+
+You can run Laravel's built-in development server by executing:
+
+```sh
+  php artisan serve
+```
+
+when working on JS you may run:
+
+```sh
+  npm run dev
+```
+it builds your js files into executable scripts.
+If you want to watch files during development, execute instead:
