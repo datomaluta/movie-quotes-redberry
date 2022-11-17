@@ -7,6 +7,6 @@
         <x-form.input name='nameinka' :value="old('nameinka', $movie->getTranslations('name')['ka'])" />
         <x-form.input name='slug' :value="old('slug', $movie->slug)" />
 
-        <x-form.button>{{ __('Save') }}</x-form.button>
+        <x-form.button>{{ __('admin.save') }}</x-form.button>
     </form>
 </x-admin-layout>

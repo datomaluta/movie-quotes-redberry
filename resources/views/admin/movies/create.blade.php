@@ -4,6 +4,6 @@
         <x-form.input name="name"/>
         <x-form.input name="nameinka"/>
         <x-form.input name="slug"/>
-        <x-form.button>{{__('Add')}}</x-form.button>
+        <x-form.button>{{__('admin.add')}}</x-form.button>
     </form>
 </x-admin-layout>

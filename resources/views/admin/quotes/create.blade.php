@@ -17,6 +17,6 @@
             </select>
         </x-form.field>
 
-        <x-form.button>{{__('Add')}}</x-form.button>
+        <x-form.button>{{__('admin.add')}}</x-form.button>
     </form>
 </x-admin-layout>

@@ -21,6 +21,6 @@
         </x-form.field>
 
 
-        <x-form.button>{{__('Save')}}</x-form.button>
+        <x-form.button>{{__('admin.save')}}</x-form.button>
     </form>
 </x-admin-layout>

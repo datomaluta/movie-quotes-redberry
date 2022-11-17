@@ -23,29 +23,31 @@
                         <nav class="mt-5 flex-1" aria-label="Sidebar">
                             <div class="space-y-1 px-2">
 
-                                <a href="{{route('admin.index')}}"
+                                <a href="{{ route('admin.index') }}"
                                     class="{{ request()->is('admin') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md">
 
-                                    <x-svgs.home/>
-                                    {{__('Dashboard')}}
+                                    <x-svgs.home />
+                                    {{ __('admin.dashboard') }}
                                 </a>
 
-                                <a href="{{route('admin.movies.index')}}"
+                                <a href="{{ route('admin.movies.index') }}"
                                     class="{{ request()->is('admin/movies') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                    {{__('Movies')}}
+                                    {{ __('admin.movies') }}
                                 </a>
 
-                                <a href="{{route('admin.quotes.index')}}"
+                                <a href="{{ route('admin.quotes.index') }}"
                                     class="{{ request()->is('admin/quotes') ? 'bg-gray-200 text-gray-900' : 'text-gray-600' }} hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                    {{__('Quotes')}}
+                                    {{ __('admin.quotes') }}
                                 </a>
 
-                                {{-- <a href="{{ route(Route::currentRouteName(), 'en') }}">en</a>
-                                <a href="{{ route(Route::currentRouteName(), 'ka') }}">ka</a> --}}
-                                
-                                {{-- <a href="{{ route(Route::currentRouteName(), ['language' => 'en','movie'=>request('movie')->id]) }}">en</a>
-                                
-                                <a href="{{ route(Route::currentRouteName(), ['language' => 'ka','movie'=>request('movie')->id]) }}">ka</a> --}}
+                                <div class="mt-16 fixed bottom-0 flex gap-2 ">
+                                    @foreach (Config::get('languages') as $lang => $language)
+                                        <a href="{{ route('lang.switch', $lang) }}"
+                                            class="mb-4 rounded-full flex items-center justify-center w-12 h-12
+                                        {{ $lang == App::getLocale() ? 'text-white bg-blue-500' : 'text-black bg-transparent border-2 border-blue-500' }}">
+                                            {{ $lang }}</a>
+                                    @endforeach
+                                </div>
                             </div>
                         </nav>
                     </div>

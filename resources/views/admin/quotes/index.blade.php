@@ -1,9 +1,8 @@
 <x-admin-layout>
-    {{-- <x-setting name="quotes" /> --}}
     <div class="flex justify-between">
-        <h1 class="text-white text-bold text-4xl">{{ __('Quotes') }}</h1>
+        <h1 class="text-white text-bold text-4xl">{{ __('admin.quotes') }}</h1>
         <a href="{{ route('admin.quotes.create') }}"
-            class="text-white px-4 py-2 font-bold rounded bg-blue-500 hover:bg-blue-700">{{ __('Add') }}
+            class="text-white px-4 py-2 font-bold rounded bg-blue-500 hover:bg-blue-700">{{ __('admin.add') }}
         </a>
     </div>
 

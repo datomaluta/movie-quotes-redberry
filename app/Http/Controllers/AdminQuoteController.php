@@ -23,7 +23,6 @@ class AdminQuoteController extends Controller
 		$attributes = $request->validated();
 		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
-
 		Quote::create([
 			'text' => [
 				'en' => $attributes['text'],
@@ -36,21 +35,37 @@ class AdminQuoteController extends Controller
 		return redirect(route('admin.quotes.index'));
 	}
 
-	public function edit( Quote $quote)
+	public function edit(Quote $quote)
 	{
 		return view('admin.quotes.edit', ['quote'=>$quote, 'movies'=>Movie::all()]);
 	}
 
-	public function update( Quote $quote, StoreQuoteRequest $request)
+	public function update(Quote $quote, StoreQuoteRequest $request)
 	{
 		$attributes = $request->validated();
 
 		if (isset($attributes['thumbnail']))
 		{
 			$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+			$quote->update([
+				'text' => [
+					'en' => $attributes['text'],
+					'ka' => $attributes['textinka'],
+				],
+				'thumbnail'=> $attributes['thumbnail'],
+				'movie_id' => $attributes['movie_id'],
+			]);
 		}
-
-		$quote->update($attributes);
+		else
+		{
+			$quote->update([
+				'text' => [
+					'en' => $attributes['text'],
+					'ka' => $attributes['textinka'],
+				],
+				'movie_id' => $attributes['movie_id'],
+			]);
+		}
 
 		return redirect(route('admin.quotes.index'));
 	}

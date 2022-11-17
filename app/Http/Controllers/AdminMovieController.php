@@ -37,7 +37,14 @@ class AdminMovieController extends Controller
 	{
 		$attributes = $request->validated();
 
-		$movie->update($attributes);
+
+		$movie->update([
+			'name' => [
+				'en' => $attributes['name'],
+				'ka' => $attributes['nameinka'],
+			],
+			'slug'=> $attributes['slug'],
+		]);
 
 		return redirect(route('admin.movies.index'));
 	}
