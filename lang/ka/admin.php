@@ -4,8 +4,8 @@ return [
 	'dashboard'            => 'ადმინ პანელი',
 	'movies'               => 'ფილმები',
 	'quotes'               => 'ციტატები',
-	'create or Edit Movies'=> 'დაამატე ან შეცვალე ფილმი',
-	'create or Edit Quotes'=> 'დაამატე ან შეცვალე ციტატა',
+	'create_or_edit_movies'=> 'დაამატე ან შეცვალე ფილმი',
+	'create_or_edit_quotes'=> 'დაამატე ან შეცვალე ციტატა',
 	'username'             => 'იუზერნეიმი',
 	'password'             => 'პაროლი',
 	'edit'                 => 'რედაქტირება',
@@ -19,4 +19,5 @@ return [
 	'thumbnail'            => 'ფოტო',
 	'text'                 => 'ციტატა',
 	'textinka'             => 'ციტატა ქართულად',
+	'noquote'              => 'ციტატები ვერ მოიძებნა',
 ];
