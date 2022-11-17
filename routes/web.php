@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\AdminQuoteController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SessionController;
@@ -45,4 +46,4 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
 	Route::delete('/quotes/{quote}', [AdminQuoteController::class, 'destroy'])->name('admin.quotes.delete');
 });
 
-Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
