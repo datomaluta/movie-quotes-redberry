@@ -12,12 +12,6 @@ return new class extends Migration {
 	 */
 	public function up()
 	{
-		Schema::disableForeignKeyConstraints();
-
-		Schema::table('quotes', function (Blueprint $table) {
-			$table->dropColumn('movie_id');
-		});
-
 		Schema::table('quotes', function (Blueprint $table) {
 			$table->foreignId('movie_id')->constrained()->cascadeOnDelete();
 		});
@@ -32,13 +26,7 @@ return new class extends Migration {
 	 */
 	public function down()
 	{
-		Schema::disableForeignKeyConstraints();
-
-		Schema::table('quotes', function (Blueprint $table) {
-			$table->dropColumn('movie_id');
-		});
-
-		Schema::table('quotes', function (Blueprint $table) {
+        Schema::table('quotes', function (Blueprint $table) {
 			$table->foreignId('movie_id');
 		});
 
