@@ -14,7 +14,7 @@ return new class extends Migration {
 	{
 		Schema::create('quotes', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('movie_id')->constrained()->cascadeOnDelete();
+			$table->foreignId('movie_id');
 			$table->string('thumbnail');
 			$table->text('text');
 			$table->timestamps();
