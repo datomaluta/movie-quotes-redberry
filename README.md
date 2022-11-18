@@ -89,7 +89,9 @@ if you've completed getting started section, then migrating database if fairly s
 php artisan migrate
 ```
 
-[Database Design Diagram](./readme/assets/drawsql.png )
+#
+### Database Design Diagram
+![](./readme/assets/drawsql.png)
 
 #
 ### Development
