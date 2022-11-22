@@ -10,7 +10,7 @@ class AdminMovieController extends Controller
 {
 	public function index()
 	{
-		return view('admin.movies.index', ['movies'=>Movie::paginate(9)]);
+		return view('admin.movies.index', ['movies'=>Movie::latest()->paginate(9)]);
 	}
 
 	public function store(StoreMovieRequest $request)
@@ -36,7 +36,6 @@ class AdminMovieController extends Controller
 	public function update(Movie $movie, UpdateMovieRequest $request)
 	{
 		$attributes = $request->validated();
-
 
 		$movie->update([
 			'name' => [
