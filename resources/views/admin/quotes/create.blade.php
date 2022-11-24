@@ -1,8 +1,8 @@
 <x-admin-layout>
     <form class="w-1/2 mx-auto mt-4" method="POST" action="{{route('admin.quotes.store')}}" enctype="multipart/form-data">
         @csrf
-        <x-form.input name='text' />
-        <x-form.input name='textinka' />
+        <x-form.input name='text_en' />
+        <x-form.input name='text_ka' />
         <x-form.input type="file" name='thumbnail' />
 
         <x-form.field>

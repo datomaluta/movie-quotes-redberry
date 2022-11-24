@@ -168,5 +168,14 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+		'username'    => 'Username',
+		'password'    => 'Password',
+		'name_en'     => 'Movie name',
+		'name_ka'     => 'Movie name in georgian',
+		'slug'        => 'Slug',
+		'text_en'     => 'Quote',
+		'text_ka'     => 'Quote in georgian',
+		'thumbnail'   => 'Thumbnail',
+	],
 ];

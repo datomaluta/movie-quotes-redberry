@@ -19,8 +19,8 @@ class AdminMovieController extends Controller
 
 		Movie::create([
 			'name' => [
-				'en' => $attributes['name'],
-				'ka' => $attributes['nameinka'],
+				'en' => $attributes['name_en'],
+				'ka' => $attributes['name_ka'],
 			],
 			'slug'=> $attributes['slug'],
 		]);
@@ -39,8 +39,8 @@ class AdminMovieController extends Controller
 
 		$movie->update([
 			'name' => [
-				'en' => $attributes['name'],
-				'ka' => $attributes['nameinka'],
+				'en' => $attributes['name_en'],
+				'ka' => $attributes['name_ka'],
 			],
 			'slug'=> $attributes['slug'],
 		]);
