@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @vite('resources/css/app.css')
     <title>Movies and Quotes</title>
+    <link rel="shortcut icon" href="{{ asset('quote-icon.png') }}">
+
 </head>
 
 <body class="h-screen bg-gradient-radial from-neutral-600 to-neutral-700 font-sansation-reg">
