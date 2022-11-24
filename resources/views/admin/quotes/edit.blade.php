@@ -4,8 +4,8 @@
         @csrf
         @method('PATCH')
 
-        <x-form.input name='text' :value="old('text', $quote->getTranslations('text')['en'])" />
-        <x-form.input name='textinka' :value="old('text', $quote->getTranslations('text')['ka'])" />
+        <x-form.input name='text_en' :value="old('text_en', $quote->getTranslations('text')['en'])" />
+        <x-form.input name='text_ka' :value="old('text_ka', $quote->getTranslations('text')['ka'])" />
         <div class="mb-4">
             <x-form.input name='thumbnail' type='file' :value="old('thumbnail', $quote->thumbnail)" />
             <img src="{{ asset('storage/' . $quote->thumbnail) }}" alt="ssss" class="h-12 mt-4 rounded">

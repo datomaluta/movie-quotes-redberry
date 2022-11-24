@@ -25,8 +25,8 @@ class AdminQuoteController extends Controller
 
 		Quote::create([
 			'text' => [
-				'en' => $attributes['text'],
-				'ka' => $attributes['textinka'],
+				'en' => $attributes['text_en'],
+				'ka' => $attributes['text_ka'],
 			],
 			'thumbnail'=> $attributes['thumbnail'],
 			'movie_id' => $attributes['movie_id'],
@@ -49,8 +49,8 @@ class AdminQuoteController extends Controller
 			$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 			$quote->update([
 				'text' => [
-					'en' => $attributes['text'],
-					'ka' => $attributes['textinka'],
+					'en' => $attributes['text_en'],
+					'ka' => $attributes['text_ka'],
 				],
 				'thumbnail'=> $attributes['thumbnail'],
 				'movie_id' => $attributes['movie_id'],
@@ -60,8 +60,8 @@ class AdminQuoteController extends Controller
 		{
 			$quote->update([
 				'text' => [
-					'en' => $attributes['text'],
-					'ka' => $attributes['textinka'],
+					'en' => $attributes['text_en'],
+					'ka' => $attributes['text_ka'],
 				],
 				'movie_id' => $attributes['movie_id'],
 			]);

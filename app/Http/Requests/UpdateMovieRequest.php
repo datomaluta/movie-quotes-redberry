@@ -10,9 +10,9 @@ class UpdateMovieRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'name'    => ['required', Rule::unique('movies', 'name')->ignore(request()->route('movie')->id)],
-			'nameinka'=> ['required', Rule::unique('movies', 'name')->ignore(request()->route('movie')->id)],
-			'slug'    => ['required', Rule::unique('movies', 'slug')->ignore(request()->route('movie')->id)],
+			'name_en'    => ['required', Rule::unique('movies', 'name')->ignore(request()->route('movie')->id)],
+			'name_ka'    => ['required', Rule::unique('movies', 'name')->ignore(request()->route('movie')->id)],
+			'slug'       => ['required', Rule::unique('movies', 'slug')->ignore(request()->route('movie')->id)],
 		];
 	}
 }
