@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use Illuminate\Support\Str;
 
 class MovieController extends Controller
 {

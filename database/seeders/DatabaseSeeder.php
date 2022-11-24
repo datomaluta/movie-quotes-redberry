@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -49,9 +50,11 @@ class DatabaseSeeder extends Seeder
 			'slug'=> 'blue-mountains',
 		]);
 
+		$this->faker = Faker::create();
+
 		Quote::create([
 			'movie_id' => '1',
-			'thumbnail'=> 'thumbnails/zaxarichi.png',
+			'thumbnail'=> $this->faker->imageUrl(640, 480, 'movies', true),
 			'text'     => [
 				'en' => 'Remember bro, a woman is not a human being',
 				'ka' => 'ძმაკაც, დაიმახსოვრე, ქალი ადამიანი არ არის',
@@ -60,7 +63,7 @@ class DatabaseSeeder extends Seeder
 
 		Quote::create([
 			'movie_id' => '1',
-			'thumbnail'=> 'thumbnails/kalduna.png',
+			'thumbnail'=> $this->faker->imageUrl(640, 480, 'movies', true),
 			'text'     => 'You will add 100 on top of this 50 and bring it to me tomorrow.',
 			'text'     => [
 				'en' => 'You will add 100 on top of this 50 and bring it to me tomorrow',
@@ -70,7 +73,7 @@ class DatabaseSeeder extends Seeder
 
 		Quote::create([
 			'movie_id' => '2',
-			'thumbnail'=> 'thumbnails/gafrindnen.png',
+			'thumbnail'=> $this->faker->imageUrl(640, 480, 'movies', true),
 			'text'     => 'I told you they will fly away, you butterfly with a tie.',
 			'text'     => [
 				'en' => 'I told you they will fly away, you butterfly with a tie',
@@ -80,46 +83,10 @@ class DatabaseSeeder extends Seeder
 
 		Quote::create([
 			'movie_id' => '2',
-			'thumbnail'=> 'thumbnails/kaisaqme.png',
+			'thumbnail'=> $this->faker->imageUrl(640, 480, 'movies', true),
 			'text'     => [
 				'en' => 'If you are going to a good cause, take me too',
 				'ka' => 'თუ კაი საქმეზე მიდიხართ, მეც წამიყვანეთ',
-			],
-		]);
-
-		Quote::create([
-			'movie_id' => '3',
-			'thumbnail'=> 'thumbnails/egoisti.png',
-			'text'     => [
-				'en' => 'I am selfish, not drunk!',
-				'ka' => 'მთვრალი არა ვარ, ეგოისტი ვარ მე!',
-			],
-		]);
-
-		Quote::create([
-			'movie_id' => '3',
-			'thumbnail'=> 'thumbnails/brma.png',
-			'text'     => [
-				'en' => 'Why does not it have eyes, is it blind?',
-				'ka' => 'ამას თვალები რატომ არ აქვს, ბრმაა?',
-			],
-		]);
-
-		Quote::create([
-			'movie_id' => '4',
-			'thumbnail'=> 'thumbnails/tankisti.png',
-			'text'     => [
-				'en' => 'I am not afraid of anything, I was a tank driver before the war!',
-				'ka' => 'მე არაფრის არ მეშინია, ტანკისტი ვიყავი, ომამდე',
-			],
-		]);
-
-		Quote::create([
-			'movie_id' => '4',
-			'thumbnail'=> 'thumbnails/patarakaci.png',
-			'text'     => [
-				'en' => 'I am a small man, I will say what I am told',
-				'ka' => 'მე პატარა კაცი ვარ... რასაც ჩამძახებენ, იმას ამოვძახებ',
 			],
 		]);
 	}
